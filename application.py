@@ -2,7 +2,7 @@ import pickle
 from flask import Flask,request,jsonify,render_template
 import numpy as np
 import pandas as pd
-import sklearn.preprocessing as StandardScaler
+from sklearn.preprocessing import StandardScaler
 
 
 
@@ -21,7 +21,7 @@ def index():
 def predict_datapoint():
     if request.method=="POST":
         
-        Temperature =float(request.form.get('Temperature'))
+        Temperature = float(request.form.get('Temperature'))
         RH = float(request.form.get('RH'))
         Ws = float(request.form.get('Ws'))
         Rain = float(request.form.get('Rain'))
